@@ -7,13 +7,14 @@
     <meta name="description" content="Harriyo Clinic berdiri sejak 1975 oleh dr. Harriyo MD. Fokus pada screening penyakit (infeksi, metabolik, dan kanker) serta pengobatan komprehensif.">
     <style>
         :root {
-            --primary: #1a6b5a;
-            --primary-light: #2d8f7a;
-            --primary-dark: #0f4d3f;
+            --primary: #15317a;
+            --primary-light: #1e3f9e;
+            --primary-dark: #0f2156;
+            --primary-soft: #e8ecf5;
             --gold: #c8a45c;
             --gold-light: #e0c88a;
             --white: #ffffff;
-            --cream: #faf8f4;
+            --cream: #f5f7fb;
             --gray-50: #f9fafb;
             --gray-100: #f3f4f6;
             --gray-200: #e5e7eb;
@@ -60,16 +61,16 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(26, 107, 90, 0.08);
+            border-bottom: 1px solid rgba(21, 49, 122, 0.08);
             transition: var(--transition);
             padding: 0 20px;
         }
         .navbar.scrolled {
             box-shadow: var(--shadow-md);
-            background: rgba(255, 255, 255, 0.97);
+            background: rgba(255, 255, 255, 0.98);
         }
         .navbar-inner {
             max-width: 1200px;
@@ -77,7 +78,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 68px;
+            height: 72px;
         }
         .nav-logo {
             display: flex;
@@ -86,23 +87,17 @@
             text-decoration: none;
             color: var(--primary-dark);
             font-weight: 700;
-            font-size: 1.35rem;
-            letter-spacing: -0.3px;
         }
-        .nav-logo .logo-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: var(--radius-sm);
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+        .nav-logo img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .nav-logo .logo-text {
             font-size: 1.3rem;
-            flex-shrink: 0;
-        }
-        .nav-logo span {
             color: var(--primary-dark);
+            letter-spacing: -0.3px;
         }
         .nav-logo .year-badge {
             font-size: 0.7rem;
@@ -170,7 +165,6 @@
             border: none;
             cursor: pointer;
             padding: 8px;
-            z-index: 1001;
         }
         .mobile-toggle span {
             display: block;
@@ -227,7 +221,7 @@
             display: flex;
             align-items: center;
             position: relative;
-            background: linear-gradient(170deg, #f0faf6 0%, #e8f5f0 30%, #faf8f4 70%, #fdfaf3 100%);
+            background: linear-gradient(170deg, #eef2fa 0%, #e4eafe 30%, #f5f7fb 70%, #fafafe 100%);
             padding: 100px 20px 60px;
             overflow: hidden;
         }
@@ -238,7 +232,7 @@
             right: -180px;
             width: 700px;
             height: 700px;
-            background: radial-gradient(circle, rgba(26, 107, 90, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(21, 49, 122, 0.03) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -249,7 +243,7 @@
             left: -120px;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(200, 164, 92, 0.07) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(200, 164, 92, 0.05) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -267,7 +261,7 @@
         .hero-text .established {
             display: inline-block;
             background: var(--gold-light);
-            color: #6b4f1d;
+            color: #5a3e10;
             font-weight: 600;
             font-size: 0.85rem;
             letter-spacing: 2px;
@@ -329,12 +323,12 @@
         .btn-primary {
             background: var(--primary);
             color: white;
-            box-shadow: 0 8px 25px rgba(26, 107, 90, 0.25);
+            box-shadow: 0 8px 25px rgba(21, 49, 122, 0.25);
         }
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 14px 30px rgba(26, 107, 90, 0.35);
+            box-shadow: 0 14px 30px rgba(21, 49, 122, 0.35);
             color: white;
         }
         .btn-outline {
@@ -353,21 +347,15 @@
             justify-content: center;
             align-items: center;
         }
-        .hero-image .img-placeholder {
+        .hero-image img {
             width: 100%;
             max-width: 500px;
-            aspect-ratio: 1 / 1;
-            background: linear-gradient(145deg, #ffffff, #e8f5f0);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-xl), 0 0 0 20px rgba(26, 107, 90, 0.03), 0 0 0 50px rgba(26, 107, 90, 0.02);
-            position: relative;
-        }
-        .img-placeholder .icon-large {
-            font-size: 8rem;
-            opacity: 0.85;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl), 0 0 0 12px rgba(21, 49, 122, 0.04), 0 0 0 28px rgba(21, 49, 122, 0.02);
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            background-color: #e8ecf5;
         }
         .hero-stats {
             display: flex;
@@ -410,11 +398,8 @@
             .hero-image {
                 order: -1;
             }
-            .hero-image .img-placeholder {
-                max-width: 280px;
-            }
-            .img-placeholder .icon-large {
-                font-size: 5rem;
+            .hero-image img {
+                max-width: 320px;
             }
         }
 
@@ -467,7 +452,7 @@
         .about-image-placeholder {
             width: 100%;
             aspect-ratio: 4/3;
-            background: linear-gradient(160deg, #e8f5f0, #f0faf6, #fdfaf3);
+            background: linear-gradient(160deg, #e8ecf5, #f5f7fb, #fafafe);
             border-radius: var(--radius-lg);
             display: flex;
             align-items: center;
@@ -499,7 +484,7 @@
             font-size: 0.9rem;
             font-weight: 500;
             color: var(--primary-dark);
-            border: 1px solid rgba(26, 107, 90, 0.1);
+            border: 1px solid rgba(21, 49, 122, 0.1);
         }
         @media (max-width: 768px) {
             .about-grid {
@@ -532,18 +517,20 @@
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
             border: 1px solid transparent;
-            cursor: default;
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
         .facility-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-lg);
-            border-color: rgba(26, 107, 90, 0.12);
+            border-color: rgba(21, 49, 122, 0.12);
         }
         .facility-icon {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #e8f5f0, #d4ede4);
+            background: linear-gradient(135deg, #e8ecf5, #d4dcee);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -560,8 +547,11 @@
             font-size: 0.85rem;
             color: var(--gray-600);
         }
+        .facility-link {
+            cursor: pointer;
+        }
 
-        /* ========== INFO SECTION (Hours & Location) ========== */
+        /* ========== INFO SECTION ========== */
         .info-section {
             background: var(--white);
         }
@@ -581,7 +571,7 @@
             transition: var(--transition);
         }
         .info-card:hover {
-            border-color: rgba(26, 107, 90, 0.2);
+            border-color: rgba(21, 49, 122, 0.2);
             box-shadow: var(--shadow-md);
         }
         .info-icon {
@@ -788,9 +778,9 @@
     <nav class="navbar" id="navbar">
         <div class="navbar-inner">
             <a href="#" class="nav-logo">
-                <div class="logo-icon">⚕️</div>
+                <img src="logo.jpg" alt="Logo Harriyo Clinic">
                 <div>
-                    Harriyo Clinic
+                    <span class="logo-text">Harriyo Clinic</span>
                     <span class="year-badge">Sejak 1975</span>
                 </div>
             </a>
@@ -839,9 +829,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="img-placeholder">
-                    <span class="icon-large">🏥</span>
-                </div>
+                <img src="depan.jpg" alt="Tampak depan Harriyo Clinic">
             </div>
         </div>
     </section>
@@ -850,7 +838,7 @@
     <section class="about-section" id="tentang">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image-placeholder">🩺💚</div>
+                <div class="about-image-placeholder">🩺💙</div>
                 <div class="about-content">
                     <span class="label" style="font-size:0.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">Tentang Kami</span>
                     <h3>Lebih dari 49 Tahun Melayani dengan Hati</h3>
@@ -895,11 +883,12 @@
                     <h4>Gigi & Mulut</h4>
                     <p>Perawatan gigi, scaling, tambal, hingga prosedur estetika</p>
                 </div>
-                <div class="facility-card">
+                <!-- Akupuntur dengan link khusus -->
+                <a href="https://hendrikkho-akupuntur.github.io/profile/profile%20dr%20Hendrik%20akupuntur.html" target="_blank" rel="noopener" class="facility-card facility-link">
                     <div class="facility-icon">📍</div>
                     <h4>Akupuntur</h4>
                     <p>Terapi akupuntur untuk nyeri, stres, & keseimbangan tubuh</p>
-                </div>
+                </a>
                 <div class="facility-card">
                     <div class="facility-icon">🖥️</div>
                     <h4>USG</h4>
@@ -1012,7 +1001,6 @@
 
     <!-- ==================== SCRIPTS ==================== -->
     <script>
-        // Mobile menu toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
 
@@ -1021,7 +1009,6 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close mobile menu when a link is clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('active');
@@ -1029,7 +1016,6 @@
             });
         });
 
-        // Navbar shadow on scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 30) {
