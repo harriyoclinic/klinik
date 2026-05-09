@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harriyo Clinic | Screening & Pengobatan Komprehensif Sejak 1975</title>
+    <meta name="description" content="Harriyo Clinic berdiri sejak 1975 oleh dr. Harriyo MD. Fokus pada screening penyakit (infeksi, metabolik, dan kanker) serta pengobatan komprehensif.">
+    <style>
+        :root {
+            --primary: #1a6b5a;
+            --primary-light: #2d8f7a;
+            --primary-dark: #0f4d3f;
+            --gold: #c8a45c;
+            --gold-light: #e0c88a;
+            --white: #ffffff;
+            --cream: #faf8f4;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08), 0 20px 40px rgba(0, 0, 0, 0.06);
+            --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1), 0 30px 60px rgba(0, 0, 0, 0.08);
+            --radius-sm: 8px;
+            --radius: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--gray-800);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(26, 107, 90, 0.08);
+            transition: var(--transition);
+            padding: 0 20px;
+        }
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.97);
+        }
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1.35rem;
+            letter-spacing: -0.3px;
+        }
+        .nav-logo .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        .nav-logo span {
+            color: var(--primary-dark);
+        }
+        .nav-logo .year-badge {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            line-height: 1;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 6px 0;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 10px 20px !important;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            transition: var(--transition);
+            white-space: nowrap;
+            text-decoration: none;
+            font-size: 0.9rem !important;
+        }
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .nav-cta::after {
+            display: none !important;
+        }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .mobile-toggle span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--primary-dark);
+            border-radius: 2px;
+            margin: 6px 0;
+            transition: var(--transition);
+        }
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        @media (max-width: 900px) {
+            .mobile-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 90px 30px 30px;
+                gap: 20px;
+                box-shadow: var(--shadow-xl);
+                transition: right 0.35s ease;
+                align-items: flex-start;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 1.05rem;
+            }
+            .nav-cta {
+                margin-top: 8px;
+                display: inline-block;
+            }
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(170deg, #f0faf6 0%, #e8f5f0 30%, #faf8f4 70%, #fdfaf3 100%);
+            padding: 100px 20px 60px;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -180px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(26, 107, 90, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -120px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(200, 164, 92, 0.07) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-text .established {
+            display: inline-block;
+            background: var(--gold-light);
+            color: #6b4f1d;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+        .hero-text h1 .highlight {
+            color: var(--primary);
+            position: relative;
+        }
+        .hero-text .subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .hero-text .doctor-name {
+            font-size: 1rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+        .hero-text .description {
+            color: var(--gray-600);
+            margin-bottom: 30px;
+            max-width: 480px;
+            font-size: 1.05rem;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 26px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            letter-spacing: 0.2px;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 8px 25px rgba(26, 107, 90, 0.25);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(26, 107, 90, 0.35);
+            color: white;
+        }
+        .btn-outline {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-image .img-placeholder {
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 1 / 1;
+            background: linear-gradient(145deg, #ffffff, #e8f5f0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-xl), 0 0 0 20px rgba(26, 107, 90, 0.03), 0 0 0 50px rgba(26, 107, 90, 0.02);
+            position: relative;
+        }
+        .img-placeholder .icon-large {
+            font-size: 8rem;
+            opacity: 0.85;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .hero-stat .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .hero-text .description {
+                margin: 0 auto 24px;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .hero-image {
+                order: -1;
+            }
+            .hero-image .img-placeholder {
+                max-width: 280px;
+            }
+            .img-placeholder .icon-large {
+                font-size: 5rem;
+            }
+        }
+
+        /* ========== SECTION STYLES ========== */
+        section {
+            padding: 80px 20px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-header .label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .section-header h2 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+        .section-header .divider {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+            margin: 0 auto;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ========== ABOUT ========== */
+        .about-section {
+            background: var(--white);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-image-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(160deg, #e8f5f0, #f0faf6, #fdfaf3);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            font-size: 5rem;
+        }
+        .about-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 14px;
+        }
+        .about-content p {
+            color: var(--gray-600);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+        .about-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .highlight-tag {
+            background: var(--gray-100);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            border: 1px solid rgba(26, 107, 90, 0.1);
+        }
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .about-image-placeholder {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+            .about-highlights {
+                justify-content: center;
+            }
+        }
+
+        /* ========== FACILITIES ========== */
+        .facilities-section {
+            background: var(--cream);
+        }
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .facility-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 28px 22px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .facility-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(26, 107, 90, 0.12);
+        }
+        .facility-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8f5f0, #d4ede4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.8rem;
+        }
+        .facility-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+        .facility-card p {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        /* ========== INFO SECTION (Hours & Location) ========== */
+        .info-section {
+            background: var(--white);
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .info-card {
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+        .info-card:hover {
+            border-color: rgba(26, 107, 90, 0.2);
+            box-shadow: var(--shadow-md);
+        }
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: var(--radius-sm);
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.4rem;
+            color: white;
+        }
+        .info-detail h4 {
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+            font-size: 1.05rem;
+        }
+        .info-detail p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            margin: 2px 0;
+        }
+        .info-detail .highlight-text {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== CTA BANNER ========== */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -30%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .cta-banner h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .cta-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        .cta-banner .btn {
+            background: white;
+            color: var(--primary-dark);
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            font-size: 1.05rem;
+        }
+        .cta-banner .btn:hover {
+            background: var(--gold-light);
+            color: #5a3e10;
+            transform: translateY(-3px);
+            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--gray-900);
+            color: #d1d5db;
+            padding: 50px 20px 25px;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        .footer-brand .footer-logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #d1d5db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        .footer-social a:hover {
+            color: var(--gold-light);
+        }
+        .footer-links h4,
+        .footer-contact h4 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links ul li {
+            margin-bottom: 6px;
+        }
+        .footer-links ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .footer-links ul li a:hover {
+            color: white;
+        }
+        .footer-contact p {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 4px;
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid #374151;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* ========== FLOATING WA BUTTON ========== */
+        .floating-wa {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 1.6rem;
+            color: white;
+            animation: pulse-wa 2.5s infinite;
+        }
+        .floating-wa:hover {
+            transform: scale(1.1);
+            box-shadow: 0 14px 35px rgba(37, 211, 102, 0.5);
+        }
+        @keyframes pulse-wa {
+            0%,
+            100% {
+                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 8px 40px rgba(37, 211, 102, 0.65), 0 0 0 16px rgba(37, 211, 102, 0.08);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="nav-logo">
+                <div class="logo-icon">⚕️</div>
+                <div>
+                    Harriyo Clinic
+                    <span class="year-badge">Sejak 1975</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#fasilitas">Fasilitas</a></li>
+                <li><a href="#info">Info & Lokasi</a></li>
+                <li><a href="https://wa.me/6282379036688?text=Halo%20Harriyo%20Clinic%2C%20saya%20ingin%20melakukan%20reservasi." target="_blank" rel="noopener" class="nav-cta">Reservasi WA</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <span class="established">🏛️ Berdiri Sejak 1975</span>
+                <h1>Kesehatan Anda, <br><span class="highlight">Prioritas Kami</span></h1>
+                <p class="subtitle">Screening Penyakit & Pengobatan Komprehensif</p>
+                <p class="doctor-name">🩺 Didirikan oleh dr. Harriyo MD</p>
+                <p class="description">
+                    Harriyo Clinic merupakan klinik yang berfokus pada <strong>screening penyakit</strong> (infeksi, metabolik, dan kanker) serta menyediakan <strong>pengobatan yang komprehensif</strong> untuk seluruh keluarga.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/6282379036688?text=Halo%20Harriyo%20Clinic%2C%20saya%20ingin%20melakukan%20reservasi." target="_blank" rel="noopener" class="btn btn-primary">
+                        📅 Reservasi Sekarang
+                    </a>
+                    <a href="#fasilitas" class="btn btn-outline">Lihat Fasilitas →</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="stat-number">49+</div>
+                        <div class="stat-label">Tahun Pengalaman</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Layanan Utama</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number">07:30–22:00</div>
+                        <div class="stat-label">Jam Operasional</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="img-placeholder">
+                    <span class="icon-large">🏥</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="about-section" id="tentang">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-placeholder">🩺💚</div>
+                <div class="about-content">
+                    <span class="label" style="font-size:0.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">Tentang Kami</span>
+                    <h3>Lebih dari 49 Tahun Melayani dengan Hati</h3>
+                    <p>
+                        <strong>Harriyo Clinic</strong> didirikan pada tahun <strong>1975</strong> oleh <strong>dr. Harriyo MD</strong>, seorang dokter visioner yang berdedikasi tinggi terhadap dunia kesehatan. Sejak awal berdiri, klinik ini telah menjadi rujukan terpercaya bagi masyarakat yang membutuhkan layanan screening dan pengobatan berkualitas.
+                    </p>
+                    <p>
+                        Kami mengkhususkan diri dalam <strong>deteksi dini penyakit infeksi, gangguan metabolik, dan kanker</strong>, serta memberikan perawatan komprehensif yang disesuaikan dengan kebutuhan setiap pasien. Pendekatan kami menggabungkan keahlian medis modern dengan sentuhan personal yang hangat.
+                    </p>
+                    <div class="about-highlights">
+                        <span class="highlight-tag">🔬 Screening Akurat</span>
+                        <span class="highlight-tag">💊 Pengobatan Tepat</span>
+                        <span class="highlight-tag">👨‍⚕️ Dokter Berpengalaman</span>
+                        <span class="highlight-tag">❤️ Pelayanan Prima</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FACILITIES ==================== -->
+    <section class="facilities-section" id="fasilitas">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Layanan Unggulan</span>
+                <h2>Fasilitas Harriyo Clinic</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-icon">🩺</div>
+                    <h4>Pemeriksaan Kesehatan</h4>
+                    <p>Medical check-up menyeluruh & konsultasi dokter umum</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">🔬</div>
+                    <h4>Laboratorium</h4>
+                    <p>Pemeriksaan darah lengkap, kimia klinik, & mikrobiologi</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">🦷</div>
+                    <h4>Gigi & Mulut</h4>
+                    <p>Perawatan gigi, scaling, tambal, hingga prosedur estetika</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">📍</div>
+                    <h4>Akupuntur</h4>
+                    <p>Terapi akupuntur untuk nyeri, stres, & keseimbangan tubuh</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">🖥️</div>
+                    <h4>USG</h4>
+                    <p>Ultrasonografi diagnostik dengan teknologi modern</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">💓</div>
+                    <h4>EKG</h4>
+                    <p>Elektrokardiogram untuk evaluasi fungsi jantung</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">💉</div>
+                    <h4>Imunebooster</h4>
+                    <p>Terapi peningkat sistem imun untuk daya tahan tubuh optimal</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">🧪</div>
+                    <h4>Infus Detox</h4>
+                    <p>Infus detoksifikasi untuk membersihkan tubuh dari radikal bebas</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">🍃</div>
+                    <h4>Gastobooster</h4>
+                    <p>Terapi pendukung kesehatan lambung & pencernaan</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">👂</div>
+                    <h4>Pemeriksaan Telinga</h4>
+                    <p>Skrining pendengaran & penanganan gangguan telinga</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== INFO (Hours & Location) ==================== -->
+    <section class="info-section" id="info">
+        <div class="container">
+            <div class="section-header">
+                <span class="label">Kunjungi Kami</span>
+                <h2>Jam Buka & Lokasi</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">🕐</div>
+                    <div class="info-detail">
+                        <h4>Jam Operasional</h4>
+                        <p>Setiap Hari</p>
+                        <p class="highlight-text">07:30 – 22:00 WIB</p>
+                        <p style="font-size:0.85rem;color:#6b7280;">Melayani pasien dengan penuh dedikasi sepanjang hari</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div class="info-detail">
+                        <h4>Alamat Klinik</h4>
+                        <p><strong>Jalan Aip KS Tubun No. 16</strong></p>
+                        <p style="font-size:0.85rem;color:#6b7280;">Lokasi strategis, mudah dijangkau dari berbagai arah</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="cta-banner">
+        <h2>Siap untuk Hidup Lebih Sehat?</h2>
+        <p>Reservasi sekarang melalui WhatsApp dan dapatkan pelayanan terbaik dari tim kami.</p>
+        <a href="https://wa.me/6282379036688?text=Halo%20Harriyo%20Clinic%2C%20saya%20ingin%20melakukan%20reservasi." target="_blank" rel="noopener" class="btn">
+            💬 Hubungi via WhatsApp
+        </a>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">⚕️ Harriyo Clinic</div>
+                <p>Klinik terpercaya sejak 1975. Berfokus pada screening penyakit (infeksi, metabolik, dan kanker) serta pengobatan komprehensif.</p>
+                <div class="footer-social" style="margin-top:12px;">
+                    <a href="https://instagram.com/harriyo.clinic" target="_blank" rel="noopener">📷 @harriyo.clinic</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#tentang">Tentang</a></li>
+                    <li><a href="#fasilitas">Fasilitas</a></li>
+                    <li><a href="#info">Info & Lokasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Kontak</h4>
+                <p>📍 Jl. Aip KS Tubun No. 16</p>
+                <p>🕐 07:30 – 22:00 WIB</p>
+                <p>📱 WA: <a href="https://wa.me/6282379036688" style="color:#25D366;text-decoration:none;">+62 823-7903-6688</a></p>
+                <p>📷 IG: <a href="https://instagram.com/harriyo.clinic" style="color:#E1306C;text-decoration:none;">@harriyo.clinic</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Harriyo Clinic. Seluruh hak cipta dilindungi. | Didirikan oleh dr. Harriyo MD — Sejak 1975.
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING WA BUTTON ==================== -->
+    <a href="https://wa.me/6282379036688?text=Halo%20Harriyo%20Clinic%2C%20saya%20ingin%20melakukan%20reservasi." target="_blank" rel="noopener" class="floating-wa" title="Reservasi via WhatsApp">
+        💬
+    </a>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar shadow on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
